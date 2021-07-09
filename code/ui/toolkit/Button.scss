@@ -1,0 +1,33 @@
+﻿.button
+{
+	transition: all 0.1s ease-in;
+
+	border: 2px solid rgba(0, 0, 0, 0);
+
+	Image, Label
+	{
+		transform: scale(1);
+	}
+
+	Label
+	{
+		transform-origin-x: 0;
+	}
+
+	&:hover, &:active
+	{
+		background-color: rgba(0, 0, 0, 0.25);
+		border: 2px solid rgba(0, 0, 0, 0.5);
+	}
+
+	&:active
+	{
+		background-color: rgba(0, 0, 0, 0.5);
+		border: 2px solid rgba(10, 0, 0, 0.75);
+
+		Image, Label
+		{
+			transform: scale(0.9);
+		}
+	}
+}

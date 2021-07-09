@@ -12,7 +12,7 @@ namespace NP
 		public Menu()
 		{
 			Local.Hud.AddEventListener( "populated", () => {
-				var menuIcon = AddChild<Button>( "icon" );
+				var menuIcon = AddChild<Button>( "button navbaricon" );
 				menuIcon.Text = "(Un)fold Menu";
 				menuIcon.AddEventListener( "onclick", () => { Log.Info( $"{IsFold}" ); if ( IsFold ) Unfold(); else Fold(); } );
 				var img = menuIcon.AddChild<Image>();
@@ -26,7 +26,7 @@ namespace NP
 
 		public void AddIcon( string href, string name, string image )
 		{
-			var icon = AddChild<NavigatorButton>( "icon" );
+			var icon = AddChild<NavigatorButton>( "button navbaricon" );
 			icon.Text = name;
 			icon.HRef = href;
 			var img = icon.AddChild<Image>();

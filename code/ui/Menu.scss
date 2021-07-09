@@ -1,4 +1,5 @@
 @import "Hud.scss";
+@import "toolkit/Button.scss";
 
 // TODO: make it adaptive
 
@@ -18,7 +19,7 @@ Menu
 	transition: all 0.1s ease-in;
 }
 
-.icon
+.navbaricon
 {
 	width: 48px;
 	height: 48px;
@@ -27,13 +28,7 @@ Menu
 	align-items: center;
 	flex-direction: row-reverse;
 
-	transition: all 0.1s ease-in;
-	
-	border: 0px solid white;
-
 	width: 100%;
-
-	border: 2px solid rgba(0, 0, 0, 0);
 	
 	//overflow: hidden;
 	//white-space: nowrap;
@@ -52,11 +47,6 @@ Menu
 
 		opacity: 0;
 		transform-origin-x: 0;
-	}
-
-	Image, Label
-	{
-		transform: scale(1);
 	}
 
 	Image
@@ -80,34 +70,19 @@ Menu
 
 		white-space: nowrap;
 		flex-wrap: nowrap;
-
-		transform-origin-x: 0;
-	}
-
-	&:hover, &:active
-	{
-		background-color: rgba(0, 0, 0, 0.25);
-		border: 2px solid rgba(0, 0, 0, 0.5);
 	}
 
 	&:active
 	{
-		background-color: rgba(0, 0, 0, 0.5);
-		border: 2px solid rgba(10, 0, 0, 0.75);
-
-		.marker, Image, Label
-		{
-			transform: scale(0.9);
-		}
-
 		.marker
 		{
+			transform: scale(0.9);
 			background-color: $accent-d1;
 		}
 	}
 }
 
-.icon.active
+.navbaricon.active
 {
 	.marker
 	{
@@ -119,7 +94,7 @@ Menu
 {
 	min-width: 128px;
 
-	.icon
+	.navbaricon
 	{
 		Label
 		{
