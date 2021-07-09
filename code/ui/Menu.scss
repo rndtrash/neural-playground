@@ -1,0 +1,128 @@
+@import "Hud.scss";
+
+// TODO: make it adaptive
+
+Menu
+{
+	position: absolute;
+	left: 0;
+	flex-direction: column;
+	min-width: 48px;
+	height: $height;
+	backdrop-filter: blur(25px);
+	background-image: url(/ui/np.panelgrain.png);
+	background-color: rgba(255, 255, 255, 0.75);
+	background-repeat: repeat;
+	flex-grow: 0;
+
+	transition: all 0.1s ease-in;
+}
+
+.icon
+{
+	width: 48px;
+	height: 48px;
+
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	transition: all 0.1s ease-in;
+	
+	border: 0px solid white;
+
+	width: 100%;
+
+	border: 2px solid rgba(0, 0, 0, 0);
+	
+	//overflow: hidden;
+	//white-space: nowrap;
+	//flex-wrap: nowrap;
+
+	.marker
+	{
+		position: absolute;
+		left: -1px;
+		z-index: 100;
+		background-color: $accent;
+		height: 32px;
+		width: 4px;
+
+		pixel-snap: 1;
+
+		opacity: 0;
+		transform-origin-x: 0;
+	}
+
+	Image, Label
+	{
+		transform: scale(1);
+	}
+
+	Image
+	{
+		width: 24px;
+		height: 24px;
+
+		margin-left: 10px;
+
+		aspect-ratio: 1;
+	}
+
+	Label
+	{
+		font-size: 18px;
+
+		display: none;
+
+		flex-grow: 1;
+
+		white-space: nowrap;
+		flex-wrap: nowrap;
+
+		transform-origin-x: 0;
+	}
+
+	&:hover, &:active
+	{
+		background-color: rgba(0, 0, 0, 0.25);
+		border: 2px solid rgba(0, 0, 0, 0.5);
+	}
+
+	&:active
+	{
+		background-color: rgba(0, 0, 0, 0.5);
+		border: 2px solid rgba(10, 0, 0, 0.75);
+
+		.marker, Image, Label
+		{
+			transform: scale(0.9);
+		}
+	}
+}
+
+.icon.active
+{
+	.marker
+	{
+		opacity: 1;
+	}
+}
+
+.unfold
+{
+	min-width: 256px;
+
+	.icon
+	{
+		Label
+		{
+			display: flex;
+		}
+
+		Image
+		{
+			margin-right: 12px;
+		}
+	}
+}

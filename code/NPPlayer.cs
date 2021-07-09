@@ -1,10 +1,8 @@
 ﻿using Sandbox;
-using System;
-using System.Linq;
 
-namespace MinimalExample
+namespace NP
 {
-	partial class MinimalPlayer : Player
+	partial class NPPlayer : Player
 	{
 		public override void Respawn()
 		{
@@ -45,19 +43,6 @@ namespace MinimalExample
 			// simulate those too.
 			//
 			SimulateActiveChild( cl, ActiveChild );
-
-			//
-			// If we're running serverside and Attack1 was just pressed, spawn a ragdoll
-			//
-			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
-			{
-				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen/citizen.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
-				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
-				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 1000;
-			}
 		}
 
 		public override void OnKilled()
