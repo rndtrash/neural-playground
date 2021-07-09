@@ -72,6 +72,7 @@ Menu
 	Label
 	{
 		font-size: 18px;
+		padding-right: 10px;
 
 		display: none;
 
@@ -98,6 +99,11 @@ Menu
 		{
 			transform: scale(0.9);
 		}
+
+		.marker
+		{
+			background-color: $accent-d1;
+		}
 	}
 }
 
@@ -111,7 +117,7 @@ Menu
 
 .unfold
 {
-	min-width: 256px;
+	min-width: 128px;
 
 	.icon
 	{

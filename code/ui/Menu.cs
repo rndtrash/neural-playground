@@ -13,13 +13,14 @@ namespace NP
 		{
 			Local.Hud.AddEventListener( "populated", () => {
 				var menuIcon = AddChild<Button>( "icon" );
-				menuIcon.Text = "Menu";
+				menuIcon.Text = "(Un)fold Menu";
 				menuIcon.AddEventListener( "onclick", () => { Log.Info( $"{IsFold}" ); if ( IsFold ) Unfold(); else Fold(); } );
 				var img = menuIcon.AddChild<Image>();
 				img.SetTexture( "/ui/np.icon.menu.png" );
 
 				AddIcon( "/home", "Home", "/ui/np.icon.home.png" );
-				AddIcon( "/test", "Test shartsharthshartshid", "/ui/np.icon.home.png" );
+				AddIcon( "/monitoring", "Alive creatures", "/ui/np.icon.alive.png" );
+				AddIcon( "/creatures", "Design creatures", "/ui/np.icon.edit.png" );
 			} );
 		}
 

@@ -31,7 +31,7 @@ namespace Sandbox.UI
 		{
 			if ( e.Button == "mouseleft" )
 			{
-				CreateEvent( "navigate", HRef );
+				NP.Hud.Instance.NPPanel.Navigator.CreateEvent( "navigate", HRef );
 				e.StopPropagation();
 			}
 		}
